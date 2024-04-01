@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Bus Connects Network Redesign - Comparison Tool</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel='stylesheet' href='css/main.css'>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300,400;500&display=swap" rel="stylesheet"> 
+		
+		<link rel="icon" href="favicon.png">
+		<link rel="apple-touch-icon" sizes="128x128" href="apple-touch-icon-precomposed.png"> 
+		
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<script src='https://unpkg.com/panzoom@9.3.0/dist/panzoom.min.js'></script>
+		
+    </head>
+    <body class="existing">
+		
+		<div id="header">
+			
+			<div id="title">
+				<h1>BusConnects Network Redesign</h1>
+				<h3>Comparison Tool</h3>
+			</div>
+			
+			<div id="switcher">
+				<button id="existing">Existing <span>(2018)</span></button>
+				<button id="v1">V1 <span>(2018)</span></button>
+				<button id="v2">V2 <span>(2019)</span></button>				
+				<button id="v3">Final <span>(2020)</span></button>
+			</div>
+
+		</div>
+		
+		<div id="zoom-controls">
+			<button id="zoomIn">+</button> <br />
+			<button id="zoomOut">–</button>
+			<button id="about">?</button>
+		</div>
+		
+		<div>
+
+		<div id="map-container">
+			<div id="map">
+				
+				<img class="existing" width="3370" height="2381" src="img/existing_2018@1.5x.png">
+				
+				<img class="v1" width="3370" height="2381" src="img/v1_2018@1.5x.png">
+				<!--<img class="v1" width="3370" height="2381" src="img/v1_2018.jpg">-->
+				
+				<!--<img class="v2" width="3370" height="2381" src="img/v2_2019.jpg">-->
+				<img class="v2" width="3370" height="2381" src="img/v2_2019@1.5x.png">
+				
+				<!--<img class="v3" width="3370" height="2381" src="img/v3_final.jpg">-->
+				<img class="v3" width="3370" height="2381" src="img/v3_final@1.5x.jpg">
+
+				<!--<img class="v3" width="3370" height="2381" src="img/v3_final.jpg">-->
+				<img class="v4" width="3370" height="2381" src="img/2024@1.5x.jpg">
+				
+			</div>
+		</div>
+		</div>
+		
+		
+		<!--<div id="loading">Loading...</div>-->
+		
+		
+		<div id="info">
+			
+			<h3>ABOUT</h3>
+			<a href="#" class="close">Close</a>
+			<hr />
+			<p>This tool was created by <a href="https://twitter.com/multikev">Kevin Cannon</a> to help people understand the changes made to the network through the different rounds of consultations. The original plan was published end of 2018 and there have been 2 revisions since then, with the final iteration published in September 2020.</p>
+			
+			<p>Note: I didn't make these maps and there are some small inaccuracies that I'm unable to fix, so always check <a href="https://www.busconnects.ie">busconnects.ie</a> for official info. Also, the 'current' network is based on the 2018 one, and there have already been some minor changes to that since the map was drawn.
+			</p>
+			<p>Apologies I don't have the maps extending further to the outskirts, but I was limited by the maps I had available to me.
+			</p>
+			
+		</div>
+
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+		<script type="text/javascript">
+			
+			var zoomLevel = 1;
+			
+			// just grab a DOM element
+			var map = document.querySelector('#map');
+			// And pass it to panzoom
+			var newArea = panzoom(map, {
+				transformOrigin: {x: 0.5, y: 0.5},
+				zoomSpeed: 0.5,
+				maxZoom: 1,
+			  	minZoom: 0.5,
+				initialZoom: 0.5,
+//				initialX: 0,
+				initialY: -200,
+//				bounds: true,
+//				boundsPadding: 1,
+			});
+ 
+			
+
+			$("#v1").click(function() {
+			  console.log("change to v1")
+			  $('body').removeClass().addClass( "v1" );
+			});
+			
+			$("#v2").click(function() {
+			  console.log("change to v2")
+			  $('body').removeClass().addClass( "v2" );
+			});
+			
+			$("#v3").click(function() {
+			  console.log("change to v3")
+			  $('body').removeClass().addClass( "v3" );
+			});
+			
+			$("#existing").click(function() {
+			  $('body').removeClass().addClass( "existing" );
+			});
+			
+			
+			$("#zoomIn").click(function() {
+			  newArea.smoothZoom(
+			  	$(window).width() / 2,
+			  	$(window).height() / 2, 
+				1.25
+				);
+			});
+			$("#zoomOut").click(function() {
+			  newArea.smoothZoom(
+			  	$(window).width() / 2,
+			  	$(window).height() / 2, 
+			  	0.8
+			  	);
+			});
+			
+			
+			$("a.close").click(function(){
+				$("div#info").toggle();
+			});
+			
+			$("button#about").click(function(){
+				$("div#info").toggle();
+			});
+			
+//			$("#reset").click(function() {
+//			  newArea.zoomAbs(-2500,-1450,0);
+//			});
+					
+		</script>
+    </body>
+</html>
