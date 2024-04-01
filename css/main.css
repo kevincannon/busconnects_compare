@@ -22,7 +22,8 @@ body img {
 
 body.v1 img.v1,
 body.v2 img.v2,
-body.v3 img.v3, 
+body.v3 img.v3,
+body.v4 img.v4, 
 body.existing img.existing {
 	display: block;
 	/*visibility: visible !important;*/
@@ -169,6 +170,7 @@ button:hover {
 body.v1 button#v1,
 body.v2 button#v2,
 body.v3 button#v3,
+body.v4 button#v4,
 body.existing button#existing {
 	font-weight: 500;
 	background-color: #00B273;
@@ -233,7 +235,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 	background-color: #f3f3f3;
 	color: #00B273;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.2), 
-              0 2px 2px rgba(0,0,0,0.2) 
+              0 2px 2px rgba(0,0,0,0.2);
  
 	transform: scale(0.9);
 
