@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
 /* Base Styles */
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Arial, sans-serif;
   text-transform: uppercase;
   color: #666;
   font-weight: 300;
@@ -88,15 +91,15 @@ body.existing img.existing {
   color: #333333;
   letter-spacing: 0.1px;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 300;
   margin: 0;
 }
 
 #header h3 {
   font-size: 12px;
-  color: #9ca3af;
+  color: #00b274;
   margin: 6px 0 0 0;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 0.3px;
 }
 
@@ -106,23 +109,26 @@ body.existing img.existing {
   justify-content: flex-end;
   background-color: #f3f4f6;
   padding: 4px;
-  border-radius: 8px;
+  border-radius: 10px;
   gap: 2px;
   overflow: visible;
 }
 
 #switcher button {
+  width: 80px;
   position: relative;
   border: none;
   background: transparent;
   padding: 8px 16px;
-  color: #6b7280;
+  color: #4c515c !important;
   font-size: 14px;
   transition: all 0.3s ease-in-out;
   border-radius: 6px;
   user-select: none; /* Disable text selection */
   cursor: pointer; /* Change cursor to hand on hover */
   overflow: visible;
+  font-family: inherit;
+  font-weight: 300 !important;
 }
 
 #switcher button:hover {
@@ -157,9 +163,9 @@ body.v2 button#v2,
 body.v3 button#v3,
 body.v4 button#v4,
 body.existing button#existing {
-  font-weight: 500;
+  font-weight: 400 !important;
   background-color: white;
-  color: #222;
+  color: #00b274 !important;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -278,8 +284,8 @@ body.existing button#existing {
 
   #header h1 {
     font-size: 14px;
-    font-weight: 300;
-    letter-spacing: 10px;
+    font-weight: 400;
+    /* letter-spacing: 10px; */
     margin-bottom: 0;
   }
 
