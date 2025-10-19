@@ -30,6 +30,7 @@ body.v1 img.v1,
 body.v2 img.v2,
 body.v3 img.v3,
 body.v4 img.v4,
+body.v5 img.v5,
 body.existing img.existing {
   display: block;
 }
@@ -99,7 +100,7 @@ body.existing img.existing {
   font-size: 12px;
   color: #00b274;
   margin: 6px 0 0 0;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.3px;
 }
 
@@ -122,7 +123,7 @@ body.existing img.existing {
   padding: 8px 16px;
   color: #4c515c !important;
   font-size: 14px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in;
   border-radius: 6px;
   user-select: none; /* Disable text selection */
   cursor: pointer; /* Change cursor to hand on hover */
@@ -162,6 +163,7 @@ body.v1 button#v1,
 body.v2 button#v2,
 body.v3 button#v3,
 body.v4 button#v4,
+body.v5 button#v5,
 body.existing button#existing {
   font-weight: 400 !important;
   background-color: white;
@@ -297,6 +299,12 @@ body.existing button#existing {
   #switcher {
     justify-content: center;
     margin-top: 6px;
+  }
+
+  #switcher button {
+    width: 70px;
+    padding: 6px 5px;
+    /* font-size: 12px; */
   }
 
   #zoom-controls {

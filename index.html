@@ -30,9 +30,10 @@
 			<div id="switcher">
 				<button id="existing">Original<span>(2018)</span></button>
 				<button id="v1">V1 <span>(2018)</span></button>
-				<button id="v2">V2 <span>(2019)</span></button>				
+				<button id="v2">V2 <span>(2019)</span></button>
 				<button id="v3">V3 <span>(2020)</span></button>
 				<button id="v4">V4 <span>(03.2024)</span></button>
+				<button id="v5">V5 <span>(10.2025)</span></button>
 			</div>
 
 		</div>
@@ -47,13 +48,14 @@
 
 		<div id="map-container">
 			<div id="map">
-				
+
 				<img class="existing" width="3370" height="2381" src="img/existing_2018@1.5x.png">
 				<img class="v1" width="3370" height="2381" src="img/v1_2018@1.5x.png">
 				<img class="v2" width="3370" height="2381" src="img/v2_2019@1.5x.png">
 				<img class="v3" width="3370" height="2381" src="img/v3_final@1.5x.jpg">
 				<img class="v4" width="3370" height="2381" src="img/A3_Big_Picture_Map_Apr_11_2024.jpg">
-				
+				<img class="v5" width="3370" height="2381" src="img/v5_02.10.25_V2.jpg">
+
 			</div>
 		</div>
 		</div>
@@ -74,6 +76,7 @@
 				<li><strong>V2</strong> Major changes based on the consultation</li>
 				<li><strong>V3</strong> Small changes based on the consultation</li>
 				<li><strong>V4</strong> Latest planned version as of April 2024</li>
+				<li><strong>V5</strong> Latest version as of October 2205.</li>
 			</ul></p>
 			
 			<p>Note: I didn't make these maps and there are some small inaccuracies that I'm unable to fix, so always check <a href="https://www.busconnects.ie">busconnects.ie</a> for official info.</p>
@@ -125,7 +128,12 @@
 			  console.log("change to v4")
 			  $('body').removeClass().addClass( "v4" );
 			});
-			
+
+			$("#v5").click(function() {
+			  console.log("change to v5")
+			  $('body').removeClass().addClass( "v5" );
+			});
+
 			$("#existing").click(function() {
 			  $('body').removeClass().addClass( "existing" );
 			});
