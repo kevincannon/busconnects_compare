@@ -9,7 +9,7 @@ body {
     Arial, sans-serif;
   text-transform: uppercase;
   color: #666;
-  font-weight: 300;
+  font-weight: 400;
   background-color: #102237;
   overflow: hidden;
 }
@@ -116,14 +116,14 @@ body.existing img.existing {
 }
 
 #switcher button {
-  width: 80px;
+  width: 120px;
   position: relative;
   border: none;
   background: transparent;
   padding: 8px 16px;
   color: #4c515c !important;
   font-size: 14px;
-  transition: all 0.3s ease-in;
+  transition: all 0.1s ease-in;
   border-radius: 6px;
   user-select: none; /* Disable text selection */
   cursor: pointer; /* Change cursor to hand on hover */
@@ -169,6 +169,54 @@ body.existing button#existing {
   background-color: white;
   color: #00b274 !important;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 26px);
+  left: 46px;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.15);
+  padding: 6px;
+  min-width: 140px;
+  z-index: 2000;
+}
+
+.dropdown-menu.show {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dropdown-menu button {
+  display: block !important;
+  width: 100% !important;
+  text-align: left !important;
+  margin: 0 !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  white-space: nowrap;
+  transition: none;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f3f4f6 !important;
+}
+
+.dropdown-menu button span {
+  display: inline !important;
+  margin-left: 4px;
 }
 
 /* Zoom Controls */
@@ -302,8 +350,8 @@ body.existing button#existing {
   }
 
   #switcher button {
-    width: 70px;
-    padding: 6px 5px;
+    width: 120px;
+    /* padding: 6px 5px; */
     /* font-size: 12px; */
   }
 

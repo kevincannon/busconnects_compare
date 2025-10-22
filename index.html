@@ -29,11 +29,16 @@
 			
 			<div id="switcher">
 				<button id="existing">Original<span>(2018)</span></button>
-				<button id="v1">V1 <span>(2018)</span></button>
-				<button id="v2">V2 <span>(2019)</span></button>
-				<button id="v3">V3 <span>(2020)</span></button>
-				<button id="v4">V4 <span>(03.2024)</span></button>
-				<button id="v5">V5 <span>(10.2025)</span></button>
+				<button id="v5">Latest<span>(10.2025)</span></button>
+				<div class="dropdown">
+					<button id="all-versions">Other versions</button>
+					<div class="dropdown-menu">
+						<button id="v1">V1 <span>(2018)</span></button>
+						<button id="v2">V2 <span>(2019)</span></button>
+						<button id="v3">V3 <span>(2020)</span></button>
+						<button id="v4">V4 <span>(03.2024)</span></button>
+					</div>
+				</div>
 			</div>
 
 		</div>
@@ -61,9 +66,6 @@
 		</div>
 		
 		
-		<!--<div id="loading">Loading...</div>-->
-		
-		
 		<div id="info">
 			
 			<h3>ABOUT</h3>
@@ -76,7 +78,7 @@
 				<li><strong>V2</strong> Major changes based on the consultation</li>
 				<li><strong>V3</strong> Small changes based on the consultation</li>
 				<li><strong>V4</strong> Latest planned version as of April 2024</li>
-				<li><strong>V5</strong> Latest version as of October 2205.</li>
+				<li><strong>V5</strong> Latest version as of October 2025.</li>
 			</ul></p>
 			
 			<p>Note: I didn't make these maps and there are some small inaccuracies that I'm unable to fix, so always check <a href="https://www.busconnects.ie">busconnects.ie</a> for official info.</p>
@@ -86,8 +88,8 @@
 		</div>
 
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 		<script type="text/javascript">
 			
 			var zoomLevel = 1;
@@ -110,35 +112,47 @@
 			
 
 			$("#v1").click(function() {
-			  console.log("change to v1")
 			  $('body').removeClass().addClass( "v1" );
 			});
 			
 			$("#v2").click(function() {
-			  console.log("change to v2")
 			  $('body').removeClass().addClass( "v2" );
 			});
 			
 			$("#v3").click(function() {
-			  console.log("change to v3")
 			  $('body').removeClass().addClass( "v3" );
 			});
 
 			$("#v4").click(function() {
-			  console.log("change to v4")
 			  $('body').removeClass().addClass( "v4" );
 			});
 
 			$("#v5").click(function() {
-			  console.log("change to v5")
 			  $('body').removeClass().addClass( "v5" );
 			});
 
 			$("#existing").click(function() {
 			  $('body').removeClass().addClass( "existing" );
 			});
-			
-			
+
+			// All versions dropdown toggle
+			$("#all-versions").click(function(e) {
+			  e.stopPropagation();
+			  $(".dropdown-menu").toggleClass("show");
+			});
+
+			// Close dropdown when clicking outside
+			$(document).click(function() {
+			  $(".dropdown-menu").removeClass("show");
+			});
+
+			// Close dropdown when selecting a version
+			$(".dropdown-menu button").click(function(e) {
+			  e.stopPropagation();
+			  $(".dropdown-menu").removeClass("show");
+			});
+
+
 			$("#zoomIn").click(function() {
 			  newArea.smoothZoom(
 			  	$(window).width() / 2,
